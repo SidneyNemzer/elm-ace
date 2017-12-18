@@ -201,6 +201,10 @@ function diff(prev, next) {
     if (pm.mode != nm.mode) {
         session.setMode("ace/mode/" + nm.mode);
     }
+    
+    if (pm.useWordWrap != nm.useWordWrap) {
+        session.setUseWrapMode(nm.useWrapMode);   
+    }
 
     if (!shared.skipNext && nm.value != editor.getValue()) {
         var pos = editor.getCursorPositionScreen();
